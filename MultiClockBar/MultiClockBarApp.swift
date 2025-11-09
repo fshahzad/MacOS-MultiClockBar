@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct MultiClockBarApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    //@StateObject private var clockManager = ClockManager()
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings {} // no main window
+        /*
+        MenuBarExtra("🕒", systemImage: "clock") {
+            ClockListView()
+                .environmentObject(clockManager)
         }
+        .menuBarExtraStyle(.window)
+         */
     }
 }
